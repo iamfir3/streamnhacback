@@ -6,6 +6,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Getter
 @Setter
@@ -27,5 +30,8 @@ public class MusicEntity {
 
     @Column(name="data",nullable = false)
     private String data;
+
+    @OneToMany(mappedBy = "musicEntity")
+    private List<FavouriteEntity> favouriteEntityList=new ArrayList<>();
 
 }

@@ -6,6 +6,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Setter
 @Getter
@@ -32,4 +35,6 @@ public class UserEntity {
     @Column(name="email",nullable = false)
     private String email;
 
+    @OneToMany(mappedBy = "userEntity")
+    private List<FavouriteEntity> favouriteEntityList=new ArrayList<>();
 }
